@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:///android_asset/app.js'></script>
+</head>
+	
+<script>
+    //Called after application is started.
+let accelerometer = new Accelerometer({frequency: 60});
+
+accelerometer.addEventListener('reading', e => {
+  console.log("Acceleration along the Z-axis " + accelerometer.z);
+  document.getElementById("z").innerHTML = accelerometer.z;
+});
+accelerometer.start();
+
+
+</script>
+
+<body onload="app.Start()">
+
+<div id="z"></div>	
+</body>
+</html>
